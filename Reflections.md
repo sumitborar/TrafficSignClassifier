@@ -126,10 +126,10 @@ The code for calculating the accuracy of the model is located in the sixteenth a
 ***1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.***
 
 Here are six German traffic signs that I found on the web:
-'test_img1.jpg','2.jpeg','test_img3.jpeg','8.jpeg','test_img5.jpeg','test_img6.jpg'
-<img src="/test_images/test_img1.jpg" width="480" alt="Test Image 1" /><img src="/test_images/2.jpg" width="480" alt="Test Image 3" />
-<img src="/test_images/test_img3.jpeg" width="480" alt="Test Image 3" /><img src="/test_images/8.jpg" width="480" alt="Test Image 4" />
-<img src="/test_images/test_img5.jpeg" width="480" alt="Test Image 5" /><img src="/test_images/test_img6.jpg" width="480" alt="Test Image 6" />
+
+<img src="/test_images/test_img1.jpg" width="280" alt="Test Image 1" /><img src="/test_images/2.jpeg" width="280" alt="Test Image 2" />
+<img src="/test_images/test_img3.jpeg" width="280" alt="Test Image 3" /><img src="/test_images/8.jpeg" width="280" alt="Test Image 4" />
+<img src="/test_images/test_img5.jpeg" width="280" alt="Test Image 5" /><img src="/test_images/test_img6.jpg" width="280" alt="Test Image 6" />
 
 
 I resized these images and pre-processed them before passing them through the classifier. On this set classifier got an accuracy of 66.67% and was unable to classify two images correctly.
@@ -143,7 +143,7 @@ The code for making predictions on my final model is located in the tenth cell o
 Here are the results of the prediction:
 
 <img src="/doc_images/predictions_internet.png" width="480" alt="Predictions" />
-![Predictions ][./doc_images/predictions_internet.png]
+
 
 Model was correctly able to predict for 4/6 images. As explained earlier both the images had significant differences compared to images used in training and testing. The other four images were similar in nature to the testing images.
 
