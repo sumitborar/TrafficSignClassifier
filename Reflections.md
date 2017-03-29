@@ -27,10 +27,10 @@ The code for this step is contained in the third code cell of the IPython notebo
 
 The bar chart below is histogram of number of training examples for each class in the training set.
 
-<img src="doc_images/training_samples_per_class.png" width="480" alt="Histogram of training samples per class" />
+<img src="doc_images/training_samples_per_class.png" width="580" alt="Histogram of training samples per class" />
 
 
-The code for this step is contained in the fourth code cell of the IPython notebook.
+The code for this step is contained in the third code cell of the IPython notebook.
 
 **Design and Test a Model Architecture**
 
@@ -42,12 +42,11 @@ Image is converted from RGB space to YUV space. Several vision research papers t
 
 As next step, image values are normalized and converted from 0-255 range to 0-1 range. This normalization of values helps during training optimization by converging to minima faster.
 
-The code for this step is contained in the fifth code cell of the IPython notebook.
-
 Example of traffic sign before and after processing.
 
 <img src="/doc_images/image_color_normalization.png" width="480" alt="Before and After Color Normalization" />
 
+The code for this step is contained in the fifth code cell of the IPython notebook.
 
 ***2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)***
 
@@ -61,10 +60,8 @@ I augment training and validation set by applying following process.
 4. In training set, a hard cutoff of 6000 samples per image is kept. We want to ensure that ratio of samples in popular classes to rare classes in maintained and at the same time not bias the classifier too much towards popular classes. This cut-off was reached by estimation and can be improved with experimentation
 5. New distribution of training set samples per class is shown below
 
-<img src="/doc_images/training_samples_per_class2.png" width="480" alt="Histogram of training samples per class" />
+<img src="/doc_images/training_samples_per_class2.png" width="580" alt="Histogram of training samples per class" />
 
-
-The code for splitting the data into training and validation sets is contained in the fifth code cell of the IPython notebook.  
 
 Here is an example of an original image and an augmented image:
 
@@ -76,7 +73,8 @@ Original Image
 Example of transformed images:
 
 <img src="/doc_images/transformed_images.png" width="480" alt="Histogram of training samples per class" />
-![alt text][./doc_images/transformed_images.png]
+
+The code for splitting the data into training and validation sets is contained in the sixth and seventh code cell of the IPython notebook.  
 
 
 ***3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.***
@@ -87,22 +85,22 @@ I tested my model with two broad types of architectures.
 1. Inception Model
 2. Lenet Model
 
-I was achieving almost similar accuracy numbers with both the models. Though it took really long time to train inception model. As a result my final report is generated on Lenet model. LeNet Model Architecture
+I was achieving almost similar accuracy numbers with both the models. Though it took really long time to train inception model. As a result my final report is generated on Lenet model. LeNet Model Architecture is shown below
 
 
 <img src="doc_images/LeNet_Arch.png" width="480" alt="LeNet Architecture" />
-![alt text][./doc_images/LeNet_Arch.png]
 
 
-The code for my final model is located in the seventh cell of the ipython notebook.
+The code for my final model is located in the twelfth cell of the ipython notebook.
 
 
 ***4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.***
 
-The code for training the model is located in the eigth cell of the ipython notebook.
-
 Adams optimizer is used with learning rate of 0.001 and epsilon of 0.1. I also experimented with learning rate of 0.005.
-Batch size - 128 with 80 Epoch to train. Smaller batch size helped in converging faster and 80 epochs were derived after observing the training and validation accuracies graph.
+Batch size - 128 with 80 Epoch to train. Smaller batch size helped in converging faster and 80 epochs were derived after observing the training and validation accuracy graph.
+
+The code for training the model is located in the fourteenth and fifteenth  cell of the ipython notebook.
+
 
 ***5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.***
 
@@ -113,10 +111,14 @@ In addition I also experimented with Inception architecture. In my experiments i
 After 80 Epochs,
 
 Train accuracy - 98.2%
-Validation accuracy - 97.4%
-Test accuracy -
 
-The code for calculating the accuracy of the model is located in the ninth cell of the Ipython notebook.
+Validation accuracy - 97.4%
+
+Test accuracy - 96.4%
+
+<img src="doc_images/accuracy_plot.png" width="480" alt="Accuracy Plot" />
+
+The code for calculating the accuracy of the model is located in the sixteenth and seventeenth cell of the Ipython notebook.
 
 
 **Test a Model on New Images**
@@ -124,32 +126,33 @@ The code for calculating the accuracy of the model is located in the ninth cell 
 ***1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.***
 
 Here are six German traffic signs that I found on the web:
-'
+'test_img1.jpg','2.jpeg','test_img3.jpeg','8.jpeg','test_img5.jpeg','test_img6.jpg'
+<img src="/test_images/test_img1.jpg" width="480" alt="Test Image 1" /><img src="/test_images/2.jpg" width="480" alt="Test Image 3" />
+<img src="/test_images/test_img3.jpeg" width="480" alt="Test Image 3" /><img src="/test_images/8.jpg" width="480" alt="Test Image 4" />
+<img src="/test_images/test_img5.jpeg" width="480" alt="Test Image 5" /><img src="/test_images/test_img6.jpg" width="480" alt="Test Image 6" />
 
-![Image 1 ][./test_images/test_img1.jpg] ![Image 2 ][./test_images/test_img2.jpg]  
-![Image 3 ][./test_images/test_img3.jpeg] ![Image 4 ][./test_images/test_img4.jpg]
-![Image 5 ][./test_images/test_img1.jpeg] ![Image 6 ][./test_images/test_img6.jpg]
 
 I resized these images and pre-processed them before passing them through the classifier. On this set classifier got an accuracy of 66.67% and was unable to classify two images correctly.
 Image 5 is taken at a distance and the sign is at an angle more then 20 degrees.
-Image 3 is also not classified correctly. It is being mis-identified as a stop sign. I am unsure as to the reason behind this.
+Image 4 is also not classified correctly. It is being mis-identified as a speed limit 20 sign instead of speed limit 60.
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+***2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).***
 
 The code for making predictions on my final model is located in the tenth cell of the Ipython notebook.
 
 Here are the results of the prediction:
 
+<img src="/doc_images/predictions_internet.png" width="480" alt="Predictions" />
 ![Predictions ][./doc_images/predictions_internet.png]
 
 Model was correctly able to predict for 4/6 images. As explained earlier both the images had significant differences compared to images used in training and testing. The other four images were similar in nature to the testing images.
 
+***3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)***
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+As we can see from the above visualization, model is very sure of the predictions in case of Images 1,2,3 and 6.
+In case of image 4 ("Speed Limit 60" sign ) model is confused between classes 1,3 and 2 . All of those classes are speed limit signs. Model is not able to correctly recognize "Speed limit 60" sign and classifies it as "Speed limit 30"
+In Image 5 model is not able to correctly recognize the sign and is mis classifying it as "Speed limit 30" sign.
 
-As we can see from the above visualization, model is very sure of the predictions in case of Images 1,2 and 3. In case of image 4 (
-"Speed Limit 60" sign ) model has some small probability over classes 2 & 5 which are similar speed limit signs.
-In Image 5 model is not able to find a good class for the image and the probabilities are spread over multiple classes with highest being 35%.
-In case of Image 6 ( "Yield" sign ) model predicts with 80% probability the correct class. It also assigns about 18% probability to "Ahead Only" class
+
+The code for making predictions on my final model is located in the 19th and 21st cell of the Ipython notebook.
