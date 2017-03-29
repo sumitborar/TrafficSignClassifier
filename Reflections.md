@@ -127,9 +127,12 @@ The code for calculating the accuracy of the model is located in the sixteenth a
 
 Here are six German traffic signs that I found on the web:
 
-<img src="/test_images/test_img1.jpg" width="280" alt="Test Image 1" /><img src="/test_images/2.jpeg" width="280" alt="Test Image 2" />
-<img src="/test_images/test_img3.jpeg" width="280" alt="Test Image 3" /><img src="/test_images/8.jpeg" width="280" alt="Test Image 4" />
-<img src="/test_images/test_img5.jpeg" width="280" alt="Test Image 5" /><img src="/test_images/test_img6.jpg" width="280" alt="Test Image 6" />
+<img src="/test_images/test_img1.jpg" width="200" height= "200" alt="Test Image 1" align="left"/>
+<img src="/test_images/2.jpeg" width="200" height= "200" alt="Test Image 2" align="right"/>
+<img src="/test_images/test_img3.jpeg" width="200" height= "200" alt="Test Image 3"  align="left"/>
+<img src="/test_images/8.jpeg" width="200" height= "200" alt="Test Image 4" align="right"/>
+<img src="/test_images/test_img5.jpeg" width="200" height= "200" alt="Test Image 5" align="left" />
+<img src="/test_images/test_img6.jpg" width="200" height= "200" alt="Test Image 6" align="right" />
 
 
 I resized these images and pre-processed them before passing them through the classifier. On this set classifier got an accuracy of 66.67% and was unable to classify two images correctly.
