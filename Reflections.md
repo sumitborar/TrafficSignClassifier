@@ -28,11 +28,11 @@ The code for this step is contained in the third code cell of the IPython notebo
 The bar chart below is histogram of number of training examples for each class in the training set.
 
 <img src="doc_images/training_samples_per_class.png" width="480" alt="Histogram of training samples per class" />
-![./doc_images/training_samples_per_class.png]
+
 
 The code for this step is contained in the fourth code cell of the IPython notebook.
 
-*Design and Test a Model Architecture*
+**Design and Test a Model Architecture**
 
 ***1. Describe how, and identify where in your code, you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.***
 
@@ -47,8 +47,6 @@ The code for this step is contained in the fifth code cell of the IPython notebo
 Example of traffic sign before and after processing.
 
 <img src="/doc_images/image_color_normalization.png" width="480" alt="Before and After Color Normalization" />
-![./doc_images/image_color_normalization.png]
-
 
 
 ***2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)***
@@ -63,8 +61,7 @@ I augment training and validation set by applying following process.
 4. In training set, a hard cutoff of 6000 samples per image is kept. We want to ensure that ratio of samples in popular classes to rare classes in maintained and at the same time not bias the classifier too much towards popular classes. This cut-off was reached by estimation and can be improved with experimentation
 5. New distribution of training set samples per class is shown below
 
-<img src="doc_images/training_samples_per_classs2.png" width="480" alt="Histogram of training samples per class" />
-![./doc_images/training_samples_per_class2.png]
+<img src="/doc_images/training_samples_per_class2.png" width="480" alt="Histogram of training samples per class" />
 
 
 The code for splitting the data into training and validation sets is contained in the fifth code cell of the IPython notebook.  
@@ -72,11 +69,13 @@ The code for splitting the data into training and validation sets is contained i
 Here is an example of an original image and an augmented image:
 
 Original Image
-<img src="doc_images/transformed_image_seed.png" width="200"  height= "200" alt="Histogram of training samples per class" />
+
+<img src="/doc_images/transformed_image_seed.png" width="200"  height= "200" alt="Histogram of training samples per class" />
 
 
-Example of transformed images
-img src="doc_images/transformed_images.png" width="480" alt="Histogram of training samples per class" />
+Example of transformed images:
+
+<img src="/doc_images/transformed_images.png" width="480" alt="Histogram of training samples per class" />
 ![alt text][./doc_images/transformed_images.png]
 
 
